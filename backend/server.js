@@ -3,8 +3,14 @@ const express = require('express')
 const dotenv = require('dotenv').config()
 const colors = require('colors')
 
+/* External Functions */
+const connectDB = require('./config/db')
+
 // Connection with the port
 const port = process.env.PORT
+
+// Connection with Mongo Atlas
+connectDB()
 
 // Create APP
 const app = express()
