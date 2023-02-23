@@ -21,5 +21,8 @@ app.use(express.json())
 // Use middleware
 app.use(errorHandler)
 
+// Endpoints
+app.use('/api/category', require('./routes/categoryRoutes'))
+
 // Conecction APP whit the port
 app.listen(port, () => console.log(`Server started on port ${port}`))
