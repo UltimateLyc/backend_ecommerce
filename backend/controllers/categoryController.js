@@ -41,8 +41,23 @@ const updateCategory = asyncHandler(async (req, res) => {
   res.status(200).json(updateCategory)
 })
 
+// Function DELETE
+const deleteCategory = asyncHandler(async (req, res) => {
+  const deleteCategory = await category.findById(req.params.id)
+
+  if (!deleteCategory) {
+    res.status(400)
+    throw new Error('Category not found')
+  }
+
+  await deleteCategory.remove()
+
+  res.status(200).json(deleteCategory)
+})
+
 module.exports = {
   setCategory,
   getCategories,
-  updateCategory
+  updateCategory,
+  deleteCategory
 }
