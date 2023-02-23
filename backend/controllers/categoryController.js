@@ -21,6 +21,13 @@ const setCategory = asyncHandler(async (req, res) => {
   res.status(201).json(newCategory)
 })
 
+// Function GET
+const getCategories = asyncHandler(async (req, res) => {
+  const categories = await category.find()
+  res.status(200).json(categories)
+})
+
 module.exports = {
-  setCategory
+  setCategory,
+  getCategories
 }

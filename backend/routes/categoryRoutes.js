@@ -3,9 +3,9 @@ const express = require('express')
 const router = express.Router()
 
 // Import external functions
-const { setCategory } = require('../controllers/categoryController')
+const { setCategory, getCategories } = require('../controllers/categoryController')
 
 // Routes
-router.route('/').post(setCategory)
+router.route('/').post(setCategory).get(getCategories)
 
 module.exports = router
