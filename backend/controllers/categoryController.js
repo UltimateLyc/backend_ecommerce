@@ -27,7 +27,22 @@ const getCategories = asyncHandler(async (req, res) => {
   res.status(200).json(categories)
 })
 
+// Function PUT
+const updateCategory = asyncHandler(async (req, res) => {
+  let updateCategory = await category.findById(req.params.id)
+
+  if (!updateCategory) {
+    res.status(400)
+    throw new Error('Category not found')
+  }
+
+  updateCategory = await category.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
+  res.status(200).json(updateCategory)
+})
+
 module.exports = {
   setCategory,
-  getCategories
+  getCategories,
+  updateCategory
 }
