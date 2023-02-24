@@ -1,5 +1,7 @@
+// Dependencies
 const mongoose = require('mongoose')
 
+// Schemas
 const courierSchema = mongoose.Schema({
   courierName: {
     type: String,
