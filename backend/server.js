@@ -25,6 +25,7 @@ app.use(errorHandler)
 app.use('/api/category', require('./routes/categoryRoutes'))
 app.use('/api/courier', require('./routes/courierRoutes'))
 app.use('/api/user', require('./routes/userRoutes'))
+app.use('/api/product', require('./routes/productRoutes'))
 
 // Conecction APP whit the port
 app.listen(port, () => console.log(`Server started on port ${port}`))

@@ -28,9 +28,18 @@ const productSchema = mongoose.Schema({
     required: true,
     ref: 'Category'
   }],
+  quantity: {
+    type: Number,
+    default: 0
+  },
   sku: {
     type: Number,
     required: [true, 'Please entre sku of product']
+  },
+  sellerId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
   }
 }, {
   timestamps: true
